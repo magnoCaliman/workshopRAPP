@@ -287,7 +287,7 @@ void loop()
 #+end_src
 
 ** 4.4 MODS
-- How can we make the duration of the sound proportional to the duration of pause? For example, always half? Or 90%?
+- How can we make the duration of the sound proportional to the duration of the pause? For example, always half? Or 90%?
   
 - How can we recreate the example 2 from [[https://github.com/magnoCaliman/workshopRAPP/blob/master/workshopRAPP_git.org#33-example-2][item 3.3]], but now using variables that /describe the logic/ of how our sequence of frequencies?
 
