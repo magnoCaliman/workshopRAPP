@@ -256,20 +256,47 @@ void loop()
 }
 #+END_SRC
 
-- Simbolic representation of information
+- /Simbolic/ representation of information
   - Does the line ~tone(pinSpeaker, baseFreq + 100, 90);~ changes the value of the variable ~baseFreq~? What's the value of ~baseFreq~ at line 12? And 14?
 
-** 4.3 MODS
+** 4.3 EXAMPLE 3
+- For the math/tunning afficionados
+#+begin_src c
+int pinSpeaker = 7;
+float baseFreq = 100;
+int delayTime = 150;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pinSpeaker, baseFreq);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq * 2);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq * 3/2);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq * 5/4);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq * 18/16);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq);
+  delay(delayTime);
+}
+#+end_src
+
+** 4.4 MODS
 - How can we make the duration of the sound proportional to the duration of pause? For example, always half? Or 90%?
   
 - How can we recreate the example 2 from [[https://github.com/magnoCaliman/workshopRAPP/blob/master/workshopRAPP_git.org#33-example-2][item 3.3]], but now using variables that /describe the logic/ of how our sequence of frequencies?
 
-** 4.4 TO THINK...
+** 4.5 TO THINK...
 - Variables allows us to create /logic/ around a piece of /data/ in our program.
   - Change the way we navigate the /layers of abstraction/ of our material.
 
 
-* COMMENT 5. ~random()~
+* 5. ~random()~
 *** EXAMPLE 1
 #+BEGIN_SRC c
 int pinSpeaker = 7;
@@ -290,7 +317,7 @@ void loop()
   - Modularity as a principle
 - Numeric value as an abstraction
 
-*** EXAMPLE n
+*** EXAMPLE 2
 - Without running, can you imagine the difference in behaviour between these two examples?
 
 1.
@@ -353,7 +380,10 @@ void loop()
 }
 #+end_src
 
-*** EXAMPLE n
+**** NOTES
+- You can only acess a piece of data once you give it a name.
+
+*** EXAMPLE 3
 - Noise!
 
 #+BEGIN_SRC c
@@ -368,6 +398,18 @@ void loop()
 }
 #+END_SRC
 
+- Filtered noise!
+#+BEGIN_SRC c
+int pinSpeaker = 7;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pinSpeaker, random(100, 400));
+}
+#+END_SRC
 
 
 * COMMENT 6. ~if()~
