@@ -412,7 +412,7 @@ void loop()
 #+END_SRC
 
 
-* COMMENT 6. ~if()~
+* 6. ~if()~
 ** EXAMPLE n
 #+begin_src c
 int pinSpeaker = 7;
