@@ -413,7 +413,7 @@ void loop()
 
 
 * 6. ~if()~
-** EXAMPLE n
+** EXAMPLE 1
 #+begin_src c
 int pinSpeaker = 7;
 int delayTime = 100;        
@@ -433,8 +433,11 @@ void loop()
 } 
 #+end_src
 
+*** NOTES
+- There are /only/ two possible answers for the "condition question": yes or no.
 
-** EXAMPLE n
+
+** EXAMPLE 2
 #+BEGIN_SRC c
 int pinSpeaker = 7;
 int delayTime = 100;        
@@ -474,8 +477,7 @@ void loop()
 }
 #+END_SRC
 
-
-** EXAMPLE n
+** EXAMPLE 3
 #+begin_src c
 int pinSpeaker = 7;
 int delayTime = 100;
@@ -488,7 +490,7 @@ void loop()
 {
   int dice = random(0, 10);
   
-  if (dice < 2) // probability of modulation (0-10)
+  if (dice < 5)
   {
     baseFreq = random(80, 300);  
   }
@@ -504,11 +506,11 @@ void loop()
 } 
 #+end_src
 
+- How can you change the probability of events?
 
-*** 6.1.2 NOTES
+*** NOTES
 - ~TRUE~ and ~FALSE~ logic
 - Syntax errors vs. logic errors
-- How can you change the probability of events?
 - ~if~ statements as
-  - a) control structures that can dictate whether or not events will happen (making "informed decisions")
-  - b) "invisible hands" that can modify values and modulate the 'entry points' in your code
+  - a) control structures that can dictate whether or not events will happen (making "informed decisions").
+  - b) "invisible hands" that can modify values and modulate the entry points in your code
