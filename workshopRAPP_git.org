@@ -71,7 +71,7 @@ void loop()
 *** 2.3 NOTES
 - ~void setup()~ and ~void loop()~
 - Functions & arguments
-- RTFM → https://www.arduino.cc/reference/en/
+- RTFM - https://www.arduino.cc/reference/en/
 - Syntax conventions
 
 *** 2.4 MODS
