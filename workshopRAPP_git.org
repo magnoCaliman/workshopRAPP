@@ -297,7 +297,7 @@ void loop()
 
 
 * 5. ~random()~
-*** EXAMPLE 1
+*** 5.1 EXAMPLE 1
 #+BEGIN_SRC c
 int pinSpeaker = 7;
 int delayTime = 100;
@@ -312,12 +312,12 @@ void loop()
 }
 #+END_SRC
 
-**** NOTES
+**** 5.1.1 NOTES
 - Functions as arguments for other functions
   - Modularity as a principle
 - Numeric value as an abstraction
 
-*** EXAMPLE 2
+*** 5.2 EXAMPLE 2
 - Without running, can you imagine the difference in behaviour between these two examples?
 
 1.
@@ -380,10 +380,10 @@ void loop()
 }
 #+end_src
 
-**** NOTES
+**** 5.2.1 NOTES
 - You can only acess a piece of data once you store it somewhere.
 
-*** EXAMPLE 3
+*** 5.3 EXAMPLE 3
 - Noise!
 
 #+BEGIN_SRC c
@@ -413,7 +413,7 @@ void loop()
 
 
 * 6. ~if()~
-** EXAMPLE 1
+** 6.1 EXAMPLE 1
 #+begin_src c
 int pinSpeaker = 7;
 int delayTime = 100;        
@@ -433,11 +433,10 @@ void loop()
 } 
 #+end_src
 
-*** NOTES
+*** 6.1.1 NOTES
 - There are /only/ two possible answers for the "condition question": yes or no.
 
-
-** EXAMPLE 2
+** 6.2 EXAMPLE 2
 #+BEGIN_SRC c
 int pinSpeaker = 7;
 int delayTime = 100;        
@@ -477,7 +476,7 @@ void loop()
 }
 #+END_SRC
 
-** EXAMPLE 3
+** 6.3 EXAMPLE 3
 #+begin_src c
 int pinSpeaker = 7;
 int delayTime = 100;
@@ -508,7 +507,7 @@ void loop()
 
 - How can you change the probability of events?
 
-*** NOTES
+*** 6.3.1 NOTES
 - ~TRUE~ and ~FALSE~ logic
 - Syntax errors vs. logic errors
 - ~if~ statements as
