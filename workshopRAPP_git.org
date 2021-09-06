@@ -381,7 +381,7 @@ void loop()
 #+end_src
 
 **** NOTES
-- You can only acess a piece of data once you give it a name.
+- You can only acess a piece of data once you store it somewhere.
 
 *** EXAMPLE 3
 - Noise!
