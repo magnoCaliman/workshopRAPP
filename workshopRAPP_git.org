@@ -437,9 +437,9 @@ void setup()
 
 void loop()
 {
-  int thisNumber = 7;
+  int thisNumber = 5;
 
-  if (thisNumber < 5) 
+  if (thisNumber < 3) 
   {
     tone(pinSpeaker, 100, 50);
     delay(250);
