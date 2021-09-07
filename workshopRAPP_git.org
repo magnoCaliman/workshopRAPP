@@ -513,3 +513,201 @@ void loop()
 - ~if~ statements as
   - a) control structures that can dictate whether or not events will happen (making "informed decisions").
   - b) "invisible hands" that can modify values and modulate the entry points in your code
+
+
+
+* And now, for something completely different...
+#+begin_src 
+int pinSpeaker = 7;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pinSpeaker, analogRead(A0));  
+} 
+#+end_src
+
+
+* 7. ITERATION
+*** 7.1 EXAMPLE 1
+#+BEGIN_SRC c
+int pinSpeaker = 7;
+int freq = 40;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pinSpeaker, freq);
+
+  freq = freq + 1;
+
+  delay(500);
+}
+#+END_SRC
+
+**** 7.1.1 NOTES
+- ~x = x + 1~ is mathematically untrue, but computationally valid
+- Iteration as a /gradual, self-referencing process/
+  
+**** 7.1.2 MODS
+- How can you make it rise faster, and then restart?
+   - "Divide and conquer" 
+
+*** 7.2 EXAMPLE 2
+- Don't forget your origins... The process of exploration is cumulative, where new techniques (such as iteration) can "unlock" new affordances from previous examples. 
+#+begin_src c
+int pinSpeaker = 5;
+int baseFreq = 1000;
+int delayTime = 100;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pinSpeaker, baseFreq, 90);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq + 100, 90);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq + 200, 90);
+  delay(delayTime);
+  tone(pinSpeaker, baseFreq + 150, 90);
+  delay(delayTime);
+
+  baseFreq = baseFreq - 10;
+}
+#+end_src  
+
+- Even simpler...
+#+begin_src c
+int pinSpeaker = 5;
+int delayTime = 5;
+int i = 0;
+
+void setup()
+{}
+
+void loop()
+{
+  i = i + 1;
+  
+  tone(pinSpeaker, 100);
+  tone(pinSpeaker, 100 + i);
+}
+#+end_src
+
+- Or noisier
+#+begin_src c
+int i = 0;
+int pinSpeaker = 5;
+int delayTime = 5;
+
+void setup()
+{}
+
+void loop()
+{
+  i = i + 1;
+  
+  tone(pinSpeaker, 100 + i);
+  delay(delayTime);
+  tone(pinSpeaker, 2000 - i);
+  delay(delayTime);
+}
+#+end_src
+
+- Or like a quasi-[[https://en.wikipedia.org/wiki/Shepard_tone][Shepard tone]]
+#+begin_src c
+int pinSpeaker = 5;
+int delayTime = 5;
+int i = 0;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pinSpeaker, 100 + i);
+  delay(delayTime);
+  tone(pinSpeaker, 100 + (i/10));
+  delay(delayTime);
+
+  i = i + 10;
+}
+#+end_src
+
+*** 7.3 EXAMPLE 3
+#+begin_src c
+int pin = 5;
+int freq = 100;
+int i = 0;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pin, freq);
+
+  freq = freq - 1;
+
+  if (freq < 32)
+  {
+    freq = 100;
+  }
+
+  delay(10);
+} 
+#+end_src
+
+- Question: how can I invert this glissando?
+
+*** 7.4 EXAMPLE 4
+- Modulate your modulators...
+#+begin_src c
+int pinSpeaker = 7;
+int randMin = 17000;
+
+void setup()
+{}
+
+void loop()
+{
+  tone(pinSpeaker, random(randMin, 20000));
+
+  randMin = randMin - 1;
+}
+#+end_src
+
+
+* 8. TUDO JUNTO E MISTURADO
+- This code uses all the concepts shown up untill now, applied to a single example. How?
+
+#+BEGIN_SRC c 
+int pinSpeaker = 7;
+int delayTime = 100;
+int dur = 90;
+int randMax = 55;
+
+void setup()
+{}
+
+void loop()
+{
+  int freqGliss = random(50, randMax);
+  
+  tone(pinSpeaker, freqGliss, dur);
+  delay(delayTime);
+
+  randMax = randMax + 10;
+
+  if (randMax > 1000)
+  {
+    randMax = 55;  
+  }
+}
+#+END_SRC
