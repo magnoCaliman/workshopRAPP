@@ -716,6 +716,7 @@ void loop()
 
 
 * foo
+#+HTML: <b> foo
 #+BEGIN_EXPORT html
 <details>
   <summary>Epcot Center</summary>
